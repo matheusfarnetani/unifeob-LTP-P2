@@ -1,0 +1,22 @@
+<h2>Lista de Aulas</h2>
+<button (click)="navigateTo('/')">Homepage</button>
+<table>
+  <thead>
+    <tr>
+      <th>Nome da Aula</th>
+      <th>Professor</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let aula of aulas">
+      <td>{{ aula.nome }}</td>
+      <td>{{ aula.professor }}</td>
+      <td>
+        <button (click)="editAula(aula.id)">Editar</button>
+        <button (click)="deleteAula(aula.id)">Deletar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<button (click)="addAula()">Adicionar Nova Aula</button>

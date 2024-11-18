@@ -1,0 +1,644 @@
+{
+	"info": {
+		"_postman_id": "4600c915-c6a2-4d3d-9f75-2cfd60ba09b6",
+		"name": "professor_db",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37631720"
+	},
+	"item": [
+		{
+			"name": "Professores",
+			"item": [
+				{
+					"name": "Prof. Get All",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{PORT}}{{RPROF}}",
+							"host": [
+								"{{URL}}{{PORT}}{{RPROF}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prof. Get by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{PORT}}{{RPROF}}/1",
+							"host": [
+								"{{URL}}{{PORT}}{{RPROF}}"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prof. Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Maria Joana\",\r\n    \"disciplina\": \"Filosofia\",\r\n    \"email\": \"maria.joana@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{PORT}}{{RPROF}}",
+							"host": [
+								"{{URL}}{{PORT}}{{RPROF}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prof. Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Maria Joana\",\r\n    \"disciplina\": \"Filosofia e Sociologia\",\r\n    \"email\": \"maria.joana@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{PORT}}{{RPROF}}/{{NPROF}}",
+							"host": [
+								"{{URL}}{{PORT}}{{RPROF}}"
+							],
+							"path": [
+								"{{NPROF}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prof. Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let myVar = pm.collectionVariables.get(\"NPROF\");\r",
+									"myVar ++ // increment by 1\r",
+									"pm.collectionVariables.set(\"NPROF\", myVar);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{PORT}}{{RPROF}}/{{NPROF}}",
+							"host": [
+								"{{URL}}{{PORT}}{{RPROF}}"
+							],
+							"path": [
+								"{{NPROF}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Aulas",
+			"item": [
+				{
+					"name": "Aulas Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{PORT}}{{RAULAS}}",
+							"host": [
+								"{{URL}}{{PORT}}{{RAULAS}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Aulas Get by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{PORT}}{{RAULAS}}/1",
+							"host": [
+								"{{URL}}{{PORT}}{{RAULAS}}"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Aulas Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Geometria\",\r\n    \"descricao\": \"Aula sobre conceitos básicos de geometria\",\r\n    \"professores_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{PORT}}{{RAULAS}}",
+							"host": [
+								"{{URL}}{{PORT}}{{RAULAS}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Aulas Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Desenho Geometrico\",\r\n    \"descricao\": \"Aula sobre conceitos básicos de desenho geometrico\",\r\n    \"professores_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{PORT}}{{RAULAS}}/{{NAULAS}}}",
+							"host": [
+								"{{URL}}{{PORT}}{{RAULAS}}"
+							],
+							"path": [
+								"{{NAULAS}}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Aulas Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let myVar = pm.collectionVariables.get(\"NAULAS\");\r",
+									"myVar ++ // increment by 1\r",
+									"pm.collectionVariables.set(\"NAULAS\", myVar);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{PORT}}{{RAULAS}}/{{NAULAS}}",
+							"host": [
+								"{{URL}}{{PORT}}{{RAULAS}}"
+							],
+							"path": [
+								"{{NAULAS}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Alunos",
+			"item": [
+				{
+					"name": "Alunos Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{PORT}}{{RALUNOS}}",
+							"host": [
+								"{{URL}}{{PORT}}{{RALUNOS}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alunos Get by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{PORT}}{{RALUNOS}}/1",
+							"host": [
+								"{{URL}}{{PORT}}{{RALUNOS}}"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alunos Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Pedrinho\",\r\n    \"email\": \"pedrinho@example.com\",\r\n    \"telefone\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{PORT}}{{RALUNOS}}",
+							"host": [
+								"{{URL}}{{PORT}}{{RALUNOS}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alunos Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Pedrinho\",\r\n    \"email\": \"pedrinho.uchiha@example.com\",\r\n    \"telefone\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{PORT}}{{RALUNOS}}/{{NALUNOS}}",
+							"host": [
+								"{{URL}}{{PORT}}{{RALUNOS}}"
+							],
+							"path": [
+								"{{NALUNOS}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Aulas Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let myVar = pm.collectionVariables.get(\"NALUNOS\");\r",
+									"myVar ++ // increment by 1\r",
+									"pm.collectionVariables.set(\"NALUNOS\", myVar);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{PORT}}{{RALUNOS}}/{{NALUNOS}}",
+							"host": [
+								"{{URL}}{{PORT}}{{RALUNOS}}"
+							],
+							"path": [
+								"{{NALUNOS}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Matriculas",
+			"item": [
+				{
+					"name": "Matriculas Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{PORT}}{{RMATR}}",
+							"host": [
+								"{{URL}}{{PORT}}{{RMATR}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Matriculas Get by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{PORT}}{{RMATR}}/1",
+							"host": [
+								"{{URL}}{{PORT}}{{RMATR}}"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Matriculas Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"data_matricula\": \"2024-11-16\",\r\n        \"aulas_id\": 2,\r\n        \"alunos_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{PORT}}{{RMATR}}",
+							"host": [
+								"{{URL}}{{PORT}}{{RMATR}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Matriculas Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"data_matricula\": \"2024-02-16\",\r\n        \"aulas_id\": 2,\r\n        \"alunos_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{PORT}}{{RMATR}}/{{NMATR}}",
+							"host": [
+								"{{URL}}{{PORT}}{{RMATR}}"
+							],
+							"path": [
+								"{{NMATR}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Matriculas Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let myVar = pm.collectionVariables.get(\"NMATR\");\r",
+									"myVar ++ // increment by 1\r",
+									"pm.collectionVariables.set(\"NMATR\", myVar);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{PORT}}{{RMATR}}/{{NMATR}}",
+							"host": [
+								"{{URL}}{{PORT}}{{RMATR}}"
+							],
+							"path": [
+								"{{NMATR}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "PORT",
+			"value": ":3000",
+			"type": "string"
+		},
+		{
+			"key": "URL",
+			"value": "http://localhost",
+			"type": "string"
+		},
+		{
+			"key": "RPROF",
+			"value": "/professores",
+			"type": "string"
+		},
+		{
+			"key": "RAULAS",
+			"value": "/aulas",
+			"type": "string"
+		},
+		{
+			"key": "RALUNOS",
+			"value": "/alunos",
+			"type": "string"
+		},
+		{
+			"key": "RMATR",
+			"value": "/matriculas",
+			"type": "string"
+		},
+		{
+			"key": "NPROF",
+			"value": "3",
+			"type": "string"
+		},
+		{
+			"key": "NAULAS",
+			"value": "3",
+			"type": "string"
+		},
+		{
+			"key": "NALUNOS",
+			"value": "3",
+			"type": "string"
+		},
+		{
+			"key": "NMATR",
+			"value": "3",
+			"type": "string"
+		}
+	]
+}

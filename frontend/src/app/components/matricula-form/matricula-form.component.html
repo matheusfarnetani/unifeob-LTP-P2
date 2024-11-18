@@ -1,0 +1,33 @@
+<h2>{{ id ? "Editar Matrícula" : "Adicionar Matrícula" }}</h2>
+<form (ngSubmit)="saveMatricula()">
+  <div>
+    <label for="alunoId">Aluno</label>
+    <select
+      id="alunoId"
+      [(ngModel)]="matricula.alunos_id"
+      name="alunos_id"
+      required
+    >
+      <option value="" disabled selected>Selecione um aluno</option>
+      <option *ngFor="let aluno of alunos" [value]="aluno.id">
+        {{ aluno.nome }}
+      </option>
+    </select>
+  </div>
+  <div>
+    <label for="aulaId">Aula</label>
+    <select
+      id="aulaId"
+      [(ngModel)]="matricula.aulas_id"
+      name="aulas_id"
+      required
+    >
+      <option value="" disabled selected>Selecione uma aula</option>
+      <option *ngFor="let aula of aulas" [value]="aula.id">
+        {{ aula.nome }}
+      </option>
+    </select>
+  </div>
+  <button type="submit">Salvar</button>
+</form>
+<a routerLink="/matriculas">Voltar</a>

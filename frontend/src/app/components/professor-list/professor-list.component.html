@@ -1,0 +1,22 @@
+<h2>Lista de Professores</h2>
+<button (click)="navigateTo('/')">Homepage</button>
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Disciplina</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let professor of professores">
+      <td>{{ professor.nome }}</td>
+      <td>{{ professor.disciplina }}</td>
+      <td>
+        <button (click)="editProfessor(professor.id)">Editar</button>
+        <button (click)="deleteProfessor(professor.id)">Deletar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<button (click)="addProfessor()">Adicionar Novo Professor</button>

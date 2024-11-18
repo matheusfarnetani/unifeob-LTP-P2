@@ -1,0 +1,22 @@
+<h2>{{ id ? "Editar Aula" : "Adicionar Aula" }}</h2>
+<form (ngSubmit)="saveAula()">
+  <div>
+    <label for="nome">Nome da Aula</label>
+    <input type="text" id="nome" [(ngModel)]="aula.nome" name="nome" required />
+  </div>
+  <div>
+    <label for="professorId">Professor</label>
+    <select
+      id="professorId"
+      [(ngModel)]="aula.professorId"
+      name="professorId"
+      required
+    >
+      <option *ngFor="let professor of professores" [value]="professor.id">
+        {{ professor.nome }}
+      </option>
+    </select>
+  </div>
+  <button type="submit">Salvar</button>
+</form>
+<a routerLink="/aulas">Voltar</a>

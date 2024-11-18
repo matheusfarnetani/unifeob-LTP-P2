@@ -1,0 +1,29 @@
+<h2>{{ id ? "Editar Professor" : "Adicionar Professor" }}</h2>
+<form (ngSubmit)="saveProfessor()">
+  <div>
+    <label for="nome">Nome</label>
+    <input
+      type="text"
+      id="nome"
+      [(ngModel)]="professor.nome"
+      name="nome"
+      required
+    />
+  </div>
+  <div>
+    <label for="disciplina">Disciplina</label>
+    <input
+      type="text"
+      id="disciplina"
+      [(ngModel)]="professor.disciplina"
+      name="disciplina"
+      required
+    />
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="email" id="email" [(ngModel)]="professor.email" name="email" />
+  </div>
+  <button type="submit">Salvar</button>
+</form>
+<a routerLink="/professores">Voltar</a>
