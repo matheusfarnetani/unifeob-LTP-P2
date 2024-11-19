@@ -1,12 +1,22 @@
 # Projeto P2 - Sistema de Gerenciamento Acadêmico
 
-Este projeto é um sistema de gerenciamento acadêmico que inclui funcionalidades para gerenciar Professores, Alunos, Aulas e Matrículas. Siga as instruções abaixo para configurar e executar o projeto na sua máquina.
+Este projeto é um sistema de gerenciamento acadêmico que inclui funcionalidades para gerenciar Professores, Alunos, Aulas e Matrículas. Ele utiliza as seguintes tecnologias:
+
+- **Angular** no front-end para construção da interface de usuário.
+- **Node.js** com **Express** no back-end para a criação da API.
+- **MySQL** como banco de dados relacional para armazenamento de dados.
+- **Knex.js** como query builder para facilitar a interação com o banco de dados.
+
+Siga as instruções abaixo para configurar e executar o projeto na sua máquina.
 
 ## Requisitos
 
-- **Node.js** (versão 14 ou superior)
-- **MySQL** (versão 5.7 ou superior)
-- **Git**
+Para rodar este projeto, você precisará ter as seguintes tecnologias instaladas em sua máquina:
+
+- **Node.js** (versão 14 ou superior): Para executar o servidor backend e o Angular.
+- **Angular CLI** (versão 12 ou superior): Para desenvolvimento e execução do front-end.
+- **MySQL** (versão 5.7 ou superior): Para o banco de dados.
+- **Git**: Para clonar o repositório.
 
 ## Instruções para Configuração
 
@@ -83,10 +93,10 @@ module.exports = {
 2. Execute o servidor frontend:
 
    ```bash
-   npm start
+   ng serve
    ```
 
-   O servidor frontend estará rodando em `http://localhost:4200`.
+   O servidor frontend, desenvolvido em Angular, estará rodando em `http://localhost:4200`.
 
 ## Uso
 
